@@ -25,6 +25,6 @@ Things you may want to cover:
 
 # Documentation
 
-Currentaly working on 
+Currentaly working on
 
-https://guides.rubyonrails.org/getting_started.html#validations
+https://guides.rubyonrails.org/getting_started.html#crud-actions
