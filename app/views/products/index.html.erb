@@ -1,8 +1,10 @@
 <h1>Products</h1>
 
 <div id="products">
-
-  <%= link_to "New product", new_product_path %>
+  <div style="margin-bottom: 10px;">
+    <%= link_to "Login", new_session_path unless authenticated? %>
+  </div>
+  <%= link_to "New product", new_product_path if authenticated? %>
 
   <% @products.each do |product| %>
     <div>

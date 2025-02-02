@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: %i[ show edit update ]
+  before_action :set_product, only: %i[ show edit update destroy ]
+  allow_unauthenticated_access only: %i[ index show ]
 
   def index
     @products = Product.all
@@ -32,12 +33,18 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    @product.destroy
+    redirect_to products_path, notice: "Product was successfully destroyed."
+  end
+
   private
     def set_product
       @product = Product.find(params[:id])
     end
 
+    # Only allow a list of trusted parameters through.
     def product_params
-      params.expect(product: [ :name ])
+      params.expect(product: [ :name, :description ])
     end
 end

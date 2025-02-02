@@ -27,4 +27,8 @@ Things you may want to cover:
 
 Currentaly working on
 
-https://guides.rubyonrails.org/getting_started.html#crud-actions
+https://guides.rubyonrails.org/getting_started.html#file-uploads-with-active-storage
+
+Where these rich text are saved? Need to understand better in the future
+
+https://guides.rubyonrails.org/action_text_overview.html
