@@ -32,3 +32,7 @@ https://guides.rubyonrails.org/getting_started.html#file-uploads-with-active-sto
 Where these rich text are saved? Need to understand better in the future
 
 https://guides.rubyonrails.org/action_text_overview.html
+
+Need to read and understand better about Active Storage
+
+https://guides.rubyonrails.org/active_storage_overview.html
