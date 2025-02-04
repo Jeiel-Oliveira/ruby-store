@@ -27,7 +27,7 @@ Things you may want to cover:
 
 Currentaly working on
 
-https://guides.rubyonrails.org/getting_started.html#file-uploads-with-active-storage
+https://guides.rubyonrails.org/getting_started.html#adding-subscribers-to-products
 
 Where these rich text are saved? Need to understand better in the future
 
