@@ -1,9 +1,7 @@
 <% cache @product do %>
   <div style="display: flex; align-items: center; gap: 10px">
     <h1><%= @product.name %></h1>
-    <% if @product.inventory_count? %>
-      <span style="background: #9decfc; border-radius: 10px; padding: 2px 10px"><%= @product.inventory_count %></span>
-    <% end %>
+    <%= render "inventory", product: @product %>
   </div>
   <%= image_tag @product.featured_image if @product.featured_image.attached? %>
   <%= @product.description %>
