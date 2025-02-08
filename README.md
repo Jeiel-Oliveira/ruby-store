@@ -25,14 +25,21 @@ Things you may want to cover:
 
 # Documentation
 
-Currentaly working on
+Currentaly working on Whats next
 
-https://guides.rubyonrails.org/getting_started.html#adding-css-javascript
-
-Where these rich text are saved? Need to understand better in the future
-
-https://guides.rubyonrails.org/action_text_overview.html
+https://guides.rubyonrails.org/getting_started.html#what-s-next-questionmark
 
 Need to read and understand better about Active Storage
 
 https://guides.rubyonrails.org/active_storage_overview.html
+
+# Utils
+
+Tests:
+bin/rails test
+
+Linting and formating:
+bin/rubocop -a
+
+Security:
+bin/brakeman
