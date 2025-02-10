@@ -25,13 +25,23 @@ Things you may want to cover:
 
 # Documentation
 
-Currentaly working on Whats next
+Finished the base tutorial:
 
 https://guides.rubyonrails.org/getting_started.html#what-s-next-questionmark
 
-Need to read and understand better about Active Storage
+Currently learning abord active record Martin Fowler pattern
 
-https://guides.rubyonrails.org/active_storage_overview.html
+https://guides.rubyonrails.org/active_record_basics.html#validations
+
+# Generating models an controllers
+
+model and active record:
+
+bin/rails generate model Book title: string author: string
+
+controller:
+
+bin/rails generate controller Books
 
 # Utils
 
