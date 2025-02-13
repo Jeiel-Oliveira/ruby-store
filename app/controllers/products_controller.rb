@@ -41,6 +41,7 @@ class ProductsController < ApplicationController
   private
     def set_product
       @product = Product.find(params[:id])
+      @reviews = Product::Review.where(product_id: params[:id])
     end
 
     # Only allow a list of trusted parameters through.

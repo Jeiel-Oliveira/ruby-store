@@ -53,3 +53,7 @@ bin/rubocop -a
 
 Security:
 bin/brakeman
+
+# Drop table
+
+ActiveRecord::Migration.drop_table(:your_table_name)
