@@ -57,3 +57,10 @@ bin/brakeman
 # Drop table
 
 ActiveRecord::Migration.drop_table(:your_table_name)
+
+# Testing twyg-app
+
+no bash execute RAILS_ENV=test rails db:create
+execute RAILS_ENV=test rails db:migrate
+execute RAILS_ENV=test rails db:seed
+agora só rodar algum arquivo spec com RAILS_ENV=test rspec 'caminho para o arquivo de teste'
