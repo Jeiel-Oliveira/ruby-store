@@ -33,6 +33,12 @@ Currently learning abord active record Martin Fowler pattern
 
 https://guides.rubyonrails.org/active_record_basics.html#validations
 
+tail -f log/development.log | grep -E "Started |Processing by"
+
+## Caching guide
+
+https://guides.rubyonrails.org/v7.1/caching_with_rails.html
+
 # Generating models an controllers
 
 model and active record:
@@ -63,4 +69,6 @@ ActiveRecord::Migration.drop_table(:your_table_name)
 no bash execute RAILS_ENV=test rails db:create
 execute RAILS_ENV=test rails db:migrate
 execute RAILS_ENV=test rails db:seed
-agora só rodar algum arquivo spec com RAILS_ENV=test rspec 'caminho para o arquivo de teste'
+agora só rodar algum arquivo spec com RAILS_ENV=test bundle exec rspec 'caminho para o arquivo de teste'
+
+https://github.com/Twygo/twyg-app/compare/master...develop/ecosystem-part2
