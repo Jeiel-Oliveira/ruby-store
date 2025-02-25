@@ -72,3 +72,7 @@ execute RAILS_ENV=test rails db:seed
 agora só rodar algum arquivo spec com RAILS_ENV=test bundle exec rspec 'caminho para o arquivo de teste'
 
 https://github.com/Twygo/twyg-app/compare/master...develop/ecosystem-part2
+
+# Docker
+
+https://docs.docker.com/guides/ruby/containerize/

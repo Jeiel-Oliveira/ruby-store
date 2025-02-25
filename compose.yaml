@@ -1,0 +1,32 @@
+services:
+  app:
+    container_name: store
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bundle exec rails s -b '0.0.0.0'
+    ports:
+      - "4000:3000"
+    volumes:
+      - .:/app
+    environment:
+      - RAILS_ENV=development
+    depends_on:
+      - mysql
+    develop:
+      watch:
+        - action: rebuild
+          path: .
+  mysql:
+    image: mysql:8.0.35
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=twyg_app
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
+

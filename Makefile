@@ -23,6 +23,6 @@ start_app: remove_pid
 	@docker compose exec -T app bundle exec rails s -p 4000 -b 0.0.0.0 || (docker compose logs app && exit 1)
 
 bash:
-	docker exec -it store_app /bin/bash
+	docker exec -it store /bin/bash
 
 
