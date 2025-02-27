@@ -9,6 +9,8 @@ services:
       - "4000:3000"
     volumes:
       - .:/app
+      - /app/tmp
+      - /app/log
     environment:
       - RAILS_ENV=development
     depends_on:
@@ -21,12 +23,15 @@ services:
     image: mysql:8.0.35
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=twyg_app
+      - MYSQL_DATABASE=root
     ports:
       - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password
 
 volumes:
   mysql_data:
+    driver: local
 

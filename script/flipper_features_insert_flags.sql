@@ -98,4 +98,4 @@ VALUES
     ('new_learning_path', NOW(), NOW()),
     ('novo_ecossistema_ambientes', NOW(), NOW()),
     ('nova_mensagem_de_aprovacao', NOW(), NOW()),
-		('novo_ecossistema_ambientes_2', NOW(), NOW())
+	('novo_ecossistema_ambientes_2', NOW(), NOW())

@@ -76,3 +76,40 @@ https://github.com/Twygo/twyg-app/compare/master...develop/ecosystem-part2
 # Docker
 
 https://docs.docker.com/guides/ruby/containerize/
+
+Possible anwser for mysql2 gem error:
+
+https://stackoverflow.com/questions/3608287/error-installing-mysql2-failed-to-build-gem-native-extension
+
+# Branchs and users
+
+https://stage.twygo.com/
+
+dev@teste.com
+123456
+
+https://campecossistema2.stage.twygoead.com
+
+jeiel.oliveira@twygo.com
+123456
+
+https://orghouse.stage.twygoead.com/
+jeiel.oliveira@twygo.com
+123456
+
+hitechhardware.stage.twygoead.com
+jeiel.oliveira@twygo.com
+123456
+
+usuario@euax.com.br
+123456
+
+Criar nova branch:
+
+https://stage.twygoead.com/new/register/steps
+
+# Current task
+
+filter-options.tsx -> 156
+
+filter-fields.tsx
