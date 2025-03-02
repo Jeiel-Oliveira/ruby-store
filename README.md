@@ -45,6 +45,10 @@ model and active record:
 
 bin/rails generate model Book title: string author: string
 
+RESETING MIGRATIONS:'
+
+bin/rake db:migrate:reset
+
 controller:
 
 bin/rails generate controller Books
@@ -77,11 +81,17 @@ https://github.com/Twygo/twyg-app/compare/master...develop/ecosystem-part2
 
 https://docs.docker.com/guides/ruby/containerize/
 
-Possible anwser for mysql2 gem error:
-
-https://stackoverflow.com/questions/3608287/error-installing-mysql2-failed-to-build-gem-native-extension
-
 # Branchs and users
+
+localhost
+
+org.jeiel@yopmail.com
+1740745819OteUcsicSrADdSx_J6rLF-KTlmwGtZz5OWP8xQtqs1s
+123456
+
+taty.org@yopmail.com
+1740761430r1s-MqpY4hMx7MPq5mNZ8q_-NFVCtO7zSzKqDaQ7dS8
+123456
 
 https://stage.twygo.com/
 

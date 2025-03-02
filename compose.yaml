@@ -1,4 +1,5 @@
 services:
+
   app:
     container_name: store
     build:
@@ -25,13 +26,12 @@ services:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=root
     ports:
-      - "3307:3306"
+      - "3307:3307"
     volumes:
-      - mysql_data:/var/lib/mysql
+      - data_database:/var/lib/mysql
     restart: unless-stopped
-    command: --default-authentication-plugin=mysql_native_password
+    command: mysqld --sql_mode="" --default-authentication-plugin=mysql_native_password --port=3307
 
 volumes:
-  mysql_data:
-    driver: local
-
+    data_database:
+      driver: local
