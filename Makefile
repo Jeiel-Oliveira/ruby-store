@@ -24,5 +24,3 @@ start_app: remove_pid
 
 bash:
 	docker exec -it store /bin/bash
-
-

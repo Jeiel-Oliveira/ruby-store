@@ -1,5 +1,6 @@
-services:
+version: '3.8'
 
+services:
   app:
     container_name: store
     build:
@@ -10,16 +11,10 @@ services:
       - "4000:3000"
     volumes:
       - .:/app
-      - /app/tmp
-      - /app/log
     environment:
       - RAILS_ENV=development
     depends_on:
       - mysql
-    develop:
-      watch:
-        - action: rebuild
-          path: .
   mysql:
     image: mysql:8.0.35
     environment:
@@ -33,5 +28,5 @@ services:
     command: mysqld --sql_mode="" --default-authentication-plugin=mysql_native_password --port=3307
 
 volumes:
-    data_database:
-      driver: local
+  data_database:
+    driver: local
