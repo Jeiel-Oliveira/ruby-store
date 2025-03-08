@@ -74,6 +74,10 @@ https://github.com/Twygo/twyg-app/compare/master...develop/ecosystem-part2
 
 https://docs.docker.com/guides/ruby/containerize/
 
+## Tutorial docker on rails
+
+https://semaphore.io/community/tutorials/dockerizing-a-ruby-on-rails-application
+
 # Branchs and users
 
 localhost
@@ -118,32 +122,36 @@ git@github.com:Twygo/euax-microservices.git
 
 https://github.com/Twygo/twyg-app/wiki/Como-montar-o-ambiente-de-Microservi%C3%A7os-local-com-desenvolvimento
 
+## Ruby LSP
+
+instalar ruby lsp no vscode/cursor
+
+https://marketplace.visualstudio.com/items?itemName=Shopify.ruby-lsp
+
+instalar rbenv
+
+https://github.com/rbenv/rbenv
+
+instalar a versão do ruby do projeto (atualmente 3.3.1)
+
+rbenv install 3.3.1
+
+adicionar a versão correta na máquina com rbenv
+
+rbenv global 3.3.1 ou rbenv local 3.3.1 (dentro do repositório do projeto)
+
+instalar libmagic-dev para funcionar a gem ruby-filemagic
+
+sudo apt-get install libmagic-dev
+
 # SQL
 
 https://www.sqltutorial.org/
 
 ## Current task
 
-certificate_notification_service
+organization.show_export_button
 
-event_participant = EventParticipant.where(event_id: 65, user_id: 1)
+data-export-button.tsx
 
-certicateNoti = CertificateNotificationService.new(event_participant, 1, 65, 2)
-
-certicateNoti.send_notification_for_single_participant
-
-1, "Certificado emitido", "Francisca Limeira - evento_0", "/e/1/event_students/1/learning_history?tab=history_certificate&profile=admin"
-
-{
-  "message": "Account created successfully.",
-  "data": {
-      "account": "system-admin",
-      "context": "twygo",
-      "__v": 0,
-      "id": "67c72faafa124471a8579642"
-  }
-}
-
-activerecord.attributes.event_participant.question_list_name
-
-base_data_export_strategy
+content-list.tsx

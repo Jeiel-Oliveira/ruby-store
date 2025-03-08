@@ -3,7 +3,6 @@ THIS_FILE := $(lastword $(MAKEFILE_LIST))
 start:
 	@$(MAKE) -f $(THIS_FILE) stop
 	@$(MAKE) -f $(THIS_FILE) up
-	@$(MAKE) -f $(THIS_FILE) start_app
 
 start_debug:
 	@$(MAKE) -f $(THIS_FILE) stop
@@ -14,7 +13,7 @@ stop:
 	@docker compose stop
 
 up:
-	@docker compose up -d --remove-orphans
+	@docker compose up
 
 remove_pid:
 	@docker compose exec -T app rm -f /rails/tmp/pids/server.pid || true
