@@ -61,6 +61,16 @@ bin/rails generate controller Books
 ## Drop table:
 ActiveRecord::Migration.drop_table(:your_table_name)
 
+## Tailwind:css
+
+Para desenvolver em local
+bin/rails tailwindcss:watch
+
+Para buildar
+bin/rails tailwindcss:build
+
+https://tailwindcss.com/docs/installation/framework-guides/ruby-on-rails
+
 # Testing twyg-app
 
 bash execute RAILS_ENV=test rails db:create
@@ -136,7 +146,7 @@ instalar a versão do ruby do projeto (atualmente 3.3.1)
 
 rbenv install 3.3.1
 
-adicionar a versão correta na máquina com rbenv
+utilizar a versão correta na máquina com rbenv
 
 rbenv global 3.3.1 ou rbenv local 3.3.1 (dentro do repositório do projeto)
 
@@ -155,3 +165,9 @@ organization.show_export_button
 data-export-button.tsx
 
 content-list.tsx
+
+https://github.com/thoughtbot/paperclip/issues/1443
+
+---
+
+"#{entity}DataExportService".constantize.new
