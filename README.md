@@ -157,17 +157,3 @@ sudo apt-get install libmagic-dev
 # SQL
 
 https://www.sqltutorial.org/
-
-## Current task
-
-organization.show_export_button
-
-data-export-button.tsx
-
-content-list.tsx
-
-https://github.com/thoughtbot/paperclip/issues/1443
-
----
-
-"#{entity}DataExportService".constantize.new

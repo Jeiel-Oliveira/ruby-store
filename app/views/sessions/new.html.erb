@@ -1,25 +1,27 @@
 <%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
 <%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
 
-<div class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 mx-auto my-auto">
-  <h1 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Entrar</h1>
-  <%= form_with html: { class: "space-y-6" }, url: session_path do |form| %>
-    <div>
-      <%= form.label :email_address, "Email Address", class: "block mb-2 text-sm font-medium text-gray-900" %>
-      <div class="mt-2">
-        <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address], class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
+<div class="flex flex-col items-center justify-center h-full">
+  <div class="flex flex-col items-center justify-center max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 mx-auto">
+    <h1 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Entrar</h1>
+    <%= form_with html: { class: "space-y-6" }, url: session_path do |form| %>
+      <div>
+        <%= form.label :email_address, "Email Address", class: "block mb-2 text-sm font-medium text-gray-900" %>
+        <div class="mt-2">
+          <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address], class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
+        </div>
       </div>
-    </div>
 
-    <div>
-      <%= form.label :password, "Password", class: "block mb-2 text-sm font-medium text-gray-900" %>
-      <div class="mt-2">
-        <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
-      </div>
-    </div>    
-    <%= form.submit "Sign in", class: "mt-8 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-2 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden" %>
-  <% end %>
+      <div>
+        <%= form.label :password, "Password", class: "block mb-2 text-sm font-medium text-gray-900" %>
+        <div class="mt-2">
+          <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
+        </div>
+      </div>    
+      <%= form.submit "Sign in", class: "mt-8 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-2 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden" %>
+    <% end %>
 
-  <%= link_to "Forgot password?", new_password_path, class: "block mt-4 text-sm text-gray-500 hover:underline" %>
+    <%= link_to "Forgot password?", new_password_path, class: "block mt-4 text-sm text-gray-500 hover:underline" %>
+  </div>
 </div>
 

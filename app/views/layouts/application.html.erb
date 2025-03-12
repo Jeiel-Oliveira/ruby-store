@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-full">
   <head>
     <title><%= content_for(:title) || "Store" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -24,12 +24,20 @@
 
   <body class="h-full">
     <div class="notice"><%= notice %></div>
-
-    <nav>
-      <%= link_to "Home", root_path %>
-      <%= button_to "Log out", session_path, method: :delete if authenticated? %>
+    <nav class="h-12 bg-(--color-primary)">
+      <div class="max-w-7xl px-6 mx-auto flex justify-between items-center h-full">
+        <%= link_to root_path, class: "text-blue-500 hover:text-blue-700" do %>
+          <%= image_tag "/logo.svg", alt: "Home", class: "h-8" %>
+        <% end %>
+        
+        <% if authenticated? %>
+          <%= button_to "Log out", session_path, method: :delete, class: "text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 rounded font-medium px-6 py-2 text-sm text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800" %>
+        <% else %>
+          <%= link_to "Login", new_session_path, class: "text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 rounded font-medium px-6 py-2 text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" %>
+        <% end %>
+      </div>
     </nav>
-    <main>
+    <main class="h-full max-w-7xl mx-auto p-6">
       <%= yield %>
     </main>
   </body>
