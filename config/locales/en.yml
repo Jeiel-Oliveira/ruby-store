@@ -32,3 +32,19 @@ en:
   products:
     index:
       title: "Products"
+    new:
+      title: "New product"
+    form:
+      name_placeholder: "Enter product name"
+      featured_image_placeholder: "Upload product image"
+      description_placeholder: "Enter product description"
+      inventory_count_placeholder: "Enter product inventory count"
+      submit_button: "Create product"
+      cancel_button: "Cancel"
+  reviews:
+    new:
+      title: "New review for %{product_name}"
+      submit_button: "Create review"
+      cancel_button: "Cancel"
+      rating_placeholder: "Enter rating"
+      description_placeholder: "Enter review description"

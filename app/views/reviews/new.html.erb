@@ -1,20 +1,23 @@
-<h1>New review for <%= @product.name %></h1>
+<h1 class="text-2xl font-bold mb-6"><%= t(".title", product_name: @product.name) %></h1>
 
-<%= form_with model: @review do |form| %>
+<%= form_with model: @review, html: { class: "space-y-6" } do |form| %>
 
   <div>
-    <%= form.label :rating %>
-    <%= form.number_field :rating, in: 1..5 %>
+    <%= form.label :rating, class: "block mb-2 text-sm font-medium text-gray-900" %>
+    <div class="mt-2">
+      <%= form.number_field :rating, in: 1..5, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: t(".rating_placeholder") %>
+    </div>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.rich_text_area :description %>
+    <%= form.label :description, class: "block mb-2 text-sm font-medium text-gray-900" %>
+    <div class="mt-2">
+      <%= form.rich_text_area :description, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: t(".description_placeholder") %>
+    </div>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="flex justify-between gap-6">
+    <%= link_to t(".cancel_button"), product_path(@product), class: "flex w-full items-center justify-center rounded-md border border-gray-300 bg-white px-6 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:outline-hidden" %>
+    <%= form.submit t(".submit_button"), class: "flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-2 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden" %>
   </div>
 <% end %>
-
-<%= link_to "Cancel", products_path %>

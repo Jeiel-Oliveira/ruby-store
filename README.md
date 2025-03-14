@@ -40,7 +40,7 @@ https://guides.rubyonrails.org/v7.1/caching_with_rails.html
 
 # RAILS UTILS
 
-## Tests:
+## Tests
 bin/rails test
 
 ## Linting and formating:
@@ -70,6 +70,8 @@ Para buildar
 bin/rails tailwindcss:build
 
 https://tailwindcss.com/docs/installation/framework-guides/ruby-on-rails
+
+https://www.rubyguides.com/2020/03/rails-scaffolding/
 
 # Testing twyg-app
 
@@ -153,6 +155,10 @@ rbenv global 3.3.1 ou rbenv local 3.3.1 (dentro do repositório do projeto)
 instalar libmagic-dev para funcionar a gem ruby-filemagic
 
 sudo apt-get install libmagic-dev
+
+in the .ruby-version file change the content to:
+
+3.3.1
 
 # SQL
 

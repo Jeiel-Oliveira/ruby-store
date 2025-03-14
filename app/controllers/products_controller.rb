@@ -39,13 +39,14 @@ class ProductsController < ApplicationController
   end
 
   private
-    def set_product
-      @product = Product.find(params[:id])
-      @reviews = Product::Review.where(product_id: params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def product_params
-      params.expect(product: [ :name, :description, :featured_image, :inventory_count ])
-    end
+  def set_product
+    @product = Product.find(params[:id])
+    @reviews = Product::Review.where(product_id: params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def product_params
+    params.expect(product: [ :name, :description, :featured_image, :inventory_count ])
+  end
 end

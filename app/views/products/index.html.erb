@@ -1,11 +1,21 @@
-<h1><%= t ".title" %></h1>
+<section id="products">
+  <aside class="flex justify-between items-center mb-6">
+    <h1 class="text-2xl font-bold"><%= t ".title" %></h1>
+    <%= link_to "New product", new_product_path, class: "bg-blue-500 text-white px-4 py-2 rounded-md" if authenticated? %>
+  </aside>
 
-<div id="products">  
-  <%= link_to "New product", new_product_path if authenticated? %>
+  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <% @products.each do |product| %>            
+      <div class="max-w-sm rounded overflow-hidden shadow-lg">
+        <%= link_to product do %>
+          <%= image_tag product.featured_image, class: "rounded-t-lg h-50 w-full object-cover" %>        
+        <% end %>
 
-  <% @products.each do |product| %>
-    <div>
-      <%= link_to product.name, product %>
-    </div>
-  <% end %>
-</div>
+        <div class="px-6 py-4 h-40 flex flex-col justify-end">
+          <%= link_to product.name, product, class: "font-bold text-xl mb-2" %>
+          <%= tag.div product.description, class: "truncate text-gray-700" %>
+        </div>        
+      </div>
+    <% end %>
+  </section>
+</section>
