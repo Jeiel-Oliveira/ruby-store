@@ -1,12 +1,12 @@
 <section id="products">
   <aside class="flex justify-between items-center mb-6">
     <h1 class="text-2xl font-bold"><%= t ".title" %></h1>
-    <%= link_to "New product", new_product_path, class: "bg-blue-500 text-white px-4 py-2 rounded-md" if authenticated? %>
+    <%= link_to t(".new_product"), new_product_path, class: "bg-blue-500 text-white px-4 py-2 rounded-md" if authenticated? %>
   </aside>
 
   <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
     <% @products.each do |product| %>            
-      <div class="max-w-sm rounded overflow-hidden shadow-lg">
+      <div class="max-w-sm rounded bg-white overflow-hidden shadow-lg">
         <%= link_to product do %>
           <%= image_tag product.featured_image, class: "rounded-t-lg h-50 w-full object-cover" %>        
         <% end %>

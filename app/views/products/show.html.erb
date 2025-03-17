@@ -1,32 +1,62 @@
-<p><%= link_to "Back", products_path %></p>
-
-<main>
-  <section class="product">
-    <%= image_tag @product.featured_image if @product.featured_image.attached? %>
-
-    <section class="product-info">
-      <% cache @product do %>
-        <div style="display: flex; align-items: center; gap: 10px">
-          <h1><%= @product.name %></h1>
-          <%= render "inventory", product: @product %>
-        </div>
-        <%= @product.description %>
+<main class="product">  
+    <div class="flex justify-between gap-2 mb-6 items-center">
+      <%= button_to products_path, method: :get, class: "border border-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-50 self-start cursor-pointer flex items-center gap-2" do %>
+        &larr; Back
       <% end %>
-
+      
       <% if authenticated? %>
-        <%= link_to "Edit", edit_product_path(@product) %>
-        <%= button_to "Delete", @product, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+        <div class="flex gap-2">
+          <%= button_to "Edit", edit_product_path(@product), method: :get, class: "bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 cursor-pointer" %>
+          <%= button_to "Delete", @product, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 cursor-pointer" %>
+        </div>
       <% end %>
-    </section>
+    </div>
+
+  <section class="rounded-md bg-white overflow-hidden shadow-lg p-6 mb-6">
+    <aside class="flex gap-6">
+      <div class="h-64 w-64">
+        <%= image_tag @product.featured_image, class: "w-full h-full object-cover" if @product.featured_image.attached? %>
+      </div>
+
+      <div class="flex flex-col gap-4 flex-1">
+        <% cache @product do %>
+          <div class="flex items-center gap-4">
+            <h1 class="text-2xl font-bold"><%= @product.name %></h1>
+            <%= render "inventory", product: @product %>
+          </div>          
+          <p class="text-gray-700"><%= @product.description %></p>
+        <% end %>
+      </div>
+    </aside>
   </section>
 
-  <section class="product-reviews">
-    <h2>Reviews</h2>
-    <%= link_to "Add review", new_product_review_path(product_id: @product.id) %>
-    <% @reviews.each do |review| %>
-      <div>
-        <p><%= review.rating %></p>
-        <p><%= review.description if review.description? %></p>
+  <section class="rounded-md bg-white overflow-hidden shadow-lg p-6">
+    <div class="flex justify-between items-center mb-6">
+      <h2 class="text-2xl font-bold">Reviews</h2>
+      <%= link_to "Add review", new_product_review_path(product_id: @product.id), class: "bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 cursor-pointer" %>
+    </div>
+    
+    
+    
+    <% @reviews.each do |review| %>      
+      <div class="flex flex-col gap-4 mb-6 h-15">
+        <div class="flex">
+          <% review.rating.times do %>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+          <% end %>
+          <% (5 - review.rating).times do %>
+            <svg class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+          <% end %>
+        </div>
+        <% if review.description? %>
+          <div class="text-gray-700">
+            <%= review.description %>
+          </div>
+        <% end %>
       </div>
     <% end %>
   </section>

@@ -41,6 +41,7 @@ en:
       inventory_count_placeholder: "Enter product inventory count"
       submit_button: "Create product"
       cancel_button: "Cancel"
+      new_product: "New product"
   reviews:
     new:
       title: "New review for %{product_name}"
