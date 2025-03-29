@@ -35,6 +35,8 @@ https://guides.rubyonrails.org/active_record_basics.html#validations
 
 tail -f log/development.log | grep -E "Started |Processing by"
 
+tail -f log/development.log | awk '   /Started/ {print "\033[33m" $0 "\033[0m"; next}   /Processing by/ {print "\033[32m" $0 "\033[0m"; print ""; print ""; next}   {next}'
+
 ## Caching guide
 https://guides.rubyonrails.org/v7.1/caching_with_rails.html
 

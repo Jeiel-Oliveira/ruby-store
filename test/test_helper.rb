@@ -13,3 +13,11 @@ module ActiveSupport
     # Add more helper methods to be used by all tests here...
   end
 end
+
+require_relative "test_helpers/authentication_helper"
+
+module ActionDispatch
+  class IntegrationTest
+    include AuthenticationHelper
+  end
+end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :line_items
+  resources :carts
   resource :session
   resources :passwords, param: :token
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -10,8 +12,10 @@ Rails.application.routes.draw do
   resources :products do
     resources :subscribers, only: [ :create ]
     resources :reviews, only: [ :new, :create ]
+    resources :carts, only: [ :create ]
   end
 
+  resources :line_items, only: [ :create ]
   resource :unsubscribe, only: [ :show ]
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)

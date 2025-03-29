@@ -4,8 +4,8 @@ class ProductTest < ActiveSupport::TestCase
   include ActionMailer::TestHelper
 
   test "sends email notifications when back in stock" do
-    # products is a fixture that contains a product with the name "tshirt"
-    product = products(:tshirt)
+    # products is a fixture that contains a product with the name "furry_pikachu"
+    product = products(:furry_pikachu)
 
     # Set product out of stock
     product.update(inventory_count: 0)

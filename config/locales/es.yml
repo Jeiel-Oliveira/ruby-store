@@ -19,3 +19,4 @@ es:
       cancel_button: "Cancelar"
       rating_placeholder: "Ingrese calificación"
       description_placeholder: "Ingrese descripción del review"
+      price_placeholder: "Ingrese precio del producto"

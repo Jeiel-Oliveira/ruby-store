@@ -39,6 +39,7 @@ en:
       featured_image_placeholder: "Upload product image"
       description_placeholder: "Enter product description"
       inventory_count_placeholder: "Enter product inventory count"
+      price_placeholder: "Enter product price"
       submit_button: "Create product"
       cancel_button: "Cancel"
       new_product: "New product"

@@ -1,5 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-tshirt:
-  name: T-Shirt
-  inventory_count: 15
+furry_pikachu:
+  name: Furry Pikachu
+  inventory_count: 3
+  price: 10.00

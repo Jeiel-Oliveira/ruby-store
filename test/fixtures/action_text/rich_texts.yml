@@ -1,4 +1,5 @@
-# one:
-#   record: name_of_fixture (ClassOfFixture)
-#   name: content
-#   body: <p>In a <i>million</i> stars!</p>
+furry_pikachu_review:
+  record: furry_pikachu
+  record_type: Product
+  name: Furry Pikachu Review
+  body: <p>In a <i>million</i> stars!</p>

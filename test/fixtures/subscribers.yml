@@ -1,9 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 david:
-  product: tshirt
+  product: furry_pikachu
   email: david@example.org
 
 chris:
-  product: tshirt
+  product: furry_pikachu
   email: chris@example.org
