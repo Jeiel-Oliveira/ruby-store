@@ -25,8 +25,7 @@ class LineItemsController < ApplicationController
   # POST /line_items or /line_items.json
   def create
     @product = Product.find(params[:product_id])
-    # build creates a new line item without saving it to the database
-    @line_item = @cart.line_items.build(product: @product)
+    @line_item = @cart.add_product(@product)
 
     respond_to do |format|
       if @line_item.save
@@ -70,6 +69,6 @@ class LineItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def line_item_params
-      params.expect(line_item: [ :product_id, :cart_id ])
+      params.expect(line_item: [ :product_id, :cart_id, :quantity ])
     end
 end
