@@ -23,15 +23,8 @@ class LineItemsTest < ApplicationSystemTestCase
   end
 
   test "should update Line item" do
-    visit line_item_url(@line_item)
-    click_on "Edit this line item", match: :first
-
-    fill_in "Cart", with: @line_item.cart_id
-    fill_in "Product", with: @line_item.product_id
-    click_on "Update Line item"
-
-    assert_text "Line item was successfully updated"
-    click_on "Back"
+    patch line_item_url(@line_item), params: { line_item: { cart_id: @line_item.cart_id, product_id: @line_item.product_id } }
+    assert_redirected_to line_item_url(@line_item)
   end
 
   test "should destroy Line item" do

@@ -4,3 +4,8 @@ furry_pikachu:
   name: Furry Pikachu
   inventory_count: 3
   price: 10.00
+
+simple_blue_shirt:
+  name: Simple Blue Shirt
+  inventory_count: 10
+  price: 15.00
