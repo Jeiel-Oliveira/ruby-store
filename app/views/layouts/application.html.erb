@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="h-full bg-gray-100">
   <head>
-    <title><%= content_for(:title) || "Store" %></title>
+    <title><%= content_for(:title) || t('application.title') %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -26,13 +26,13 @@
     <nav class="h-12 bg-(--color-primary)">
       <div class="max-w-7xl px-6 mx-auto flex justify-between items-center h-full">
         <%= link_to root_path, class: "text-blue-500 hover:text-blue-700" do %>
-          <%= image_tag "/logo.svg", alt: "Home", class: "h-8" %>
+          <%= image_tag "/logo.svg", alt: t('application.nav.home'), class: "h-8" %>
         <% end %>
         
         <% if authenticated? %>
-          <%= button_to "Log out", session_path, method: :delete, class: "font-medium text-red-600 underline dark:text-red-500 hover:no-underline" %>
+          <%= button_to t('application.nav.logout'), session_path, method: :delete, class: "font-medium text-red-600 underline dark:text-red-500 hover:no-underline" %>
         <% else %>
-          <%= link_to "Login", new_session_path, class: "font-medium text-blue-600 underline dark:text-blue-500 hover:no-underline" %>
+          <%= link_to t('application.nav.login'), new_session_path, class: "font-medium text-blue-600 underline dark:text-blue-500 hover:no-underline" %>
         <% end %>
       </div>
     </nav>

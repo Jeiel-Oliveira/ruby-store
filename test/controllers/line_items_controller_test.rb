@@ -41,7 +41,7 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
       post line_items_url, params: { product_id: @line_item.product_id }
     end
 
-    assert_redirected_to line_item_url(LineItem.last)
+    assert_redirected_to cart_url(LineItem.last.cart)
   end
 
   test "should not show line_item when not authenticated" do
@@ -74,7 +74,7 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
   test "should update line_item when authenticated" do
     login
     patch line_item_url(@line_item), params: { line_item: { cart_id: @line_item.cart_id, product_id: @line_item.product_id } }
-    assert_redirected_to line_item_url(@line_item)
+    assert_redirected_to cart_url(@line_item.cart)
   end
 
   test "should not destroy line_item when not authenticated" do
@@ -89,6 +89,6 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
     assert_difference("LineItem.count", -1) do
       delete line_item_url(@line_item)
     end
-    assert_redirected_to line_items_url
+    assert_redirected_to root_path
   end
 end

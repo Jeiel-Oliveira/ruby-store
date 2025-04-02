@@ -26,7 +26,7 @@ class CartsController < ApplicationController
 
     respond_to do |format|
       if @cart.save
-        format.html { redirect_to @cart, notice: "Cart was successfully created." }
+        format.html { redirect_to @cart, notice: t(".success") }
         format.json { render :show, status: :created, location: @cart }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class CartsController < ApplicationController
   def update
     respond_to do |format|
       if @cart.update(cart_params)
-        format.html { redirect_to @cart, notice: "Cart was successfully updated." }
+        format.html { redirect_to @cart, notice: t(".success") }
         format.json { render :show, status: :ok, location: @cart }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -50,10 +50,11 @@ class CartsController < ApplicationController
 
   # DELETE /carts/1 or /carts/1.json
   def destroy
-    @cart.destroy!
+    @cart.destroy! if @cart.id == session[:cart_id]
+    session[:cart_id] = nil
 
     respond_to do |format|
-      format.html { redirect_to carts_path, status: :see_other, notice: "Cart was successfully destroyed." }
+      format.html { redirect_to root_path, status: :see_other, notice: t(".empty_cart") }
       format.json { head :no_content }
     end
   end
@@ -70,7 +71,7 @@ class CartsController < ApplicationController
     end
 
     def invalid_cart
-      logger.error "Attempt to access invalid cart #{params[:id]}"
-      redirect_to products_url, alert: "Invalid cart"
+      logger.error t("carts.invalid.log_message", id: params[:id])
+      redirect_to products_url, alert: t("carts.invalid.message")
     end
 end

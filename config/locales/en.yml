@@ -50,3 +50,52 @@ en:
       cancel_button: "Cancel"
       rating_placeholder: "Enter rating"
       description_placeholder: "Enter review description"
+  line_items:
+    create:
+      title: "New line item"
+      submit_button: "Create line item"
+      cancel_button: "Cancel"
+      success: "Line item was successfully created."
+    edit:
+      title: "Edit line item"
+      submit_button: "Update line item"
+      cancel_button: "Cancel"
+      success: "Line item was successfully updated."
+    destroy:
+      title: "Destroy line item"
+      submit_button: "Destroy line item"
+      cancel_button: "Cancel"
+      success: "Line item was successfully destroyed."
+  carts:
+    index:
+      title: "Shopping Carts"
+    show:
+      title: "Shopping Cart"
+      product: "Product"
+      quantity: "Quantity"
+      price: "Price"
+      total: "Total"
+      total_price: "Total Price"
+      empty_cart: "Empty cart"
+      confirm_empty: "Are you sure?"
+      empty_cart_message: "Your cart is empty"
+      continue_shopping: "Continue Shopping"
+    new:
+      title: "New Cart"
+    edit:
+      title: "Edit Cart"
+    create:
+      success: "Cart was successfully created."
+    update:
+      success: "Cart was successfully updated."
+    destroy:
+      empty_cart: "Your cart was emptied."
+    invalid:
+      message: "Invalid cart"
+      log_message: "Attempt to access invalid cart %{id}"
+  application:
+    title: "Store"
+    nav:
+      home: "Home"
+      login: "Login"
+      logout: "Log out"
