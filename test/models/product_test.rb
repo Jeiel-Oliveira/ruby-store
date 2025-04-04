@@ -14,4 +14,16 @@ class ProductTest < ActiveSupport::TestCase
       product.update(inventory_count: 10)
     end
   end
+
+  test "cannot be deleted when associated with line items" do
+    product = products(:furry_pikachu)
+    cart = Cart.create
+    cart.add_product(product)
+
+    assert_no_difference "Product.count" do
+      product.destroy
+    end
+
+    assert_includes product.errors.full_messages, I18n.t("products.errors.line_items_present")
+  end
 end

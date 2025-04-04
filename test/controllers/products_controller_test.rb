@@ -63,9 +63,19 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   test "should destroy product" do
     login
     assert_difference("Product.count", -1) do
-      delete product_url(products(:simple_blue_shirt))
+      delete product_url(products(:product_without_line_items))
     end
     assert_redirected_to products_url
+  end
+
+  test "cannot be deleted when associated with line items" do
+    product = products(:furry_pikachu)
+
+    assert_no_difference "Product.count" do
+      product.destroy
+    end
+
+    assert_includes product.errors.full_messages, I18n.t("products.errors.line_items_present")
   end
 
   test "should not destroy product when not authenticated" do

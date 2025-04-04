@@ -34,7 +34,11 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy
+    was_destroyed = @product.destroy
+    unless was_destroyed
+      return redirect_to request.referer, alert: @product.errors.full_messages.join(", ")
+    end
+
     redirect_to products_path, notice: "Product was successfully destroyed."
   end
 

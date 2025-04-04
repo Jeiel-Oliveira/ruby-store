@@ -43,6 +43,8 @@ en:
       submit_button: "Create product"
       cancel_button: "Cancel"
       new_product: "New product"
+    errors:
+      line_items_present: "Cannot delete product because it has associated line items"
   reviews:
     new:
       title: "New review for %{product_name}"

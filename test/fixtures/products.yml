@@ -9,3 +9,8 @@ simple_blue_shirt:
   name: Simple Blue Shirt
   inventory_count: 10
   price: 15.00
+  
+product_without_line_items:
+  name: Product Without Line Items
+  inventory_count: 10
+  price: 15.00

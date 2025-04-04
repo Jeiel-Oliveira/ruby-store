@@ -12,6 +12,9 @@ es:
       inventory_count_placeholder: "Ingrese cantidad de producto"
       submit_button: "Crear producto"
       cancel_button: "Cancelar"
+      price_placeholder: "Ingrese precio del producto"
+    errors:
+      line_items_present: "No se puede eliminar el producto porque tiene elementos asociados"
   reviews:
     new:
       title: "Nuevo review para %{product_name}"

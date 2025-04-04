@@ -1,14 +1,16 @@
-<div id="<%= dom_id line_item %>" class="w-full sm:w-auto my-5 space-y-5">
-  <div>
-    <strong class="block font-medium mb-1">Product:</strong>
-    <%= line_item.product_id %>
-  </div>
-  <div>
-    <strong class="block font-medium mb-1">Cart:</strong>
-    <%= line_item.cart_id %>
-  </div>
-  <div>
-    <strong class="block font-medium mb-1">Quantity:</strong>
-    <%= line_item.quantity %>
-  </div>
-</div>
+<tbody class="bg-white divide-y divide-gray-200">
+  <tr>
+    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+      <%= line_item.product.name %>
+    </td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right">
+      <%= line_item.quantity %>
+    </td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right">
+      <%= number_to_currency(line_item.product.price) %>
+    </td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right">
+      <%= number_to_currency(line_item.total_price) %>
+    </td>
+  </tr>
+</tbody>
