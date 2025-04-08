@@ -1,16 +1,16 @@
 <main class="product">  
-    <div class="flex justify-between gap-2 mb-6 items-center">
-      <%= button_to products_path, method: :get, class: "border border-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-50 self-start cursor-pointer flex items-center gap-2" do %>
-        &larr; Back
-      <% end %>
-      
-      <% if authenticated? %>
-        <div class="flex gap-2">
-          <%= button_to "Edit", edit_product_path(@product), method: :get, class: "bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 cursor-pointer" %>
-          <%= button_to "Delete", @product, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 cursor-pointer" %>
-        </div>
-      <% end %>
-    </div>
+  <div class="flex justify-between gap-2 mb-6 items-center">
+    <%= button_to products_path, method: :get, class: "border border-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-50 self-start cursor-pointer flex items-center gap-2" do %>
+      &larr; Back
+    <% end %>
+    
+    <% if authenticated? %>
+      <div class="flex gap-2">
+        <%= button_to "Edit", edit_product_path(@product), method: :get, class: "bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 cursor-pointer" %>
+        <%= button_to "Delete", @product, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 cursor-pointer" %>
+      </div>
+    <% end %>
+  </div>
 
   <section class="rounded-md bg-white overflow-hidden shadow-lg p-6 mb-6">
     <aside class="flex gap-6">

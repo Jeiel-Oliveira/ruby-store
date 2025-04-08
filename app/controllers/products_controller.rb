@@ -28,6 +28,16 @@ class ProductsController < ApplicationController
   def update
     if @product.update(product_params)
       redirect_to @product
+      ActionCable.server.broadcast "products", {
+        action: "product_updated",
+        product: {
+          id: @product.id,
+          name: @product.name,
+          description: @product.description.body,
+          price: @product.price,
+          inventory_count: @product.inventory_count
+        }
+      }
     else
       render :new, status: :unprocessable_entity
     end
