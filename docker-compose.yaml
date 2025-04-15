@@ -1,5 +1,7 @@
 services:
   store:
+    stdin_open: true
+    tty: true 
     container_name: 
       store
     build:

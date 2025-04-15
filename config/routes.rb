@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :subscribers, only: [ :create ]
     resources :reviews, only: [ :new, :create ]
     resources :carts, only: [ :create ]
+    get :who_bought, on: :member, defaults: { format: :atom }
   end
 
   resources :line_items, only: [ :create ]

@@ -26,4 +26,12 @@ class ProductTest < ActiveSupport::TestCase
 
     assert_includes product.errors.full_messages, I18n.t("products.errors.line_items_present")
   end
+
+  test "can be deleted when not associated with line items" do
+    product = products(:product_without_line_items)
+
+    assert_difference "Product.count", -1 do
+      product.destroy
+    end
+  end
 end

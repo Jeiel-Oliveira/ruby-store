@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  address: MyText
-  email: MyString
-  pay_type: 1
+  name: Oliver
+  address: 123 Main St
+  email: oliver@example.com
+  pay_type: credit_card
 
 two:
-  name: MyString
-  address: MyText
-  email: MyString
-  pay_type: 1
+  name: John
+  address: 456 Main St
+  email: john@example.com
+  pay_type: purchase_order

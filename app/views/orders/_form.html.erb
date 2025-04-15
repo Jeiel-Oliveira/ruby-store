@@ -1,7 +1,7 @@
 <%= form_with(model: order, class: "contents") do |form| %>
   <% if order.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
-      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+      <h2><%= t('orders.form.errors.title', count: order.errors.count) %></h2>
 
       <ul class="list-disc ml-6">
         <% order.errors.each do |error| %>
@@ -13,22 +13,22 @@
 
   <div class="my-5">
     <%= form.label :name %>
-    <%= form.text_field :name, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": order.errors[:name].none?, "border-red-400 focus:outline-red-600": order.errors[:name].any?}] %>
+    <%= form.text_field :name, placeholder: t('orders.form.name_placeholder'), class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": order.errors[:name].none?, "border-red-400 focus:outline-red-600": order.errors[:name].any?}] %>
   </div>
 
   <div class="my-5">
     <%= form.label :address %>
-    <%= form.textarea :address, rows: 4, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": order.errors[:address].none?, "border-red-400 focus:outline-red-600": order.errors[:address].any?}] %>
+    <%= form.textarea :address, rows: 4, placeholder: t('orders.form.address_placeholder'), class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": order.errors[:address].none?, "border-red-400 focus:outline-red-600": order.errors[:address].any?}] %>
   </div>
 
   <div class="my-5">
     <%= form.label :email %>
-    <%= form.text_field :email, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": order.errors[:email].none?, "border-red-400 focus:outline-red-600": order.errors[:email].any?}] %>
+    <%= form.text_field :email, placeholder: t('orders.form.email_placeholder'), class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": order.errors[:email].none?, "border-red-400 focus:outline-red-600": order.errors[:email].any?}] %>
   </div>
 
   <div class="my-5">
     <%= form.label :pay_type %>
-    <%= form.number_field :pay_type, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": order.errors[:pay_type].none?, "border-red-400 focus:outline-red-600": order.errors[:pay_type].any?}] %>
+    <%= form.select :pay_type, options_for_select(Order.pay_types.keys.map { |key| [t("orders.form.pay_type_placeholder.#{key}"), key] }, order.pay_type), { prompt: t('orders.form.pay_type_placeholder') }, class: ["block shadow-sm rounded-md border px-3 py-2.5 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": order.errors[:pay_type].none?, "border-red-400 focus:outline-red-600": order.errors[:pay_type].any?}] %>
   </div>
 
   <div class="inline">

@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
-  allow_unauthenticated_access only: %i[ index show ]
+  allow_unauthenticated_access only: %i[ index show who_bought ]
 
   def index
     @products = Product.all
@@ -50,6 +50,16 @@ class ProductsController < ApplicationController
     end
 
     redirect_to products_path, notice: "Product was successfully destroyed."
+  end
+
+  def who_bought
+    @product = Product.find(params[:id])
+    @latest_order = @product.orders.order(:created_at).last
+    if stale?(@latest_order)
+      respond_to do |format|
+        format.atom
+      end
+    end
   end
 
   private

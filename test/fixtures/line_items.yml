@@ -7,3 +7,8 @@ one:
 two:
   product: simple_blue_shirt
   cart: two
+
+three:
+  product: simple_blue_shirt
+  cart: one
+  order: one

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_09_233621) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_15_220941) do
   create_table "action_text_rich_texts", charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false
     t.text "body", size: :long
@@ -56,7 +56,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_09_233621) do
 
   create_table "line_items", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "product_id", null: false
-    t.bigint "cart_id", null: false
+    t.bigint "cart_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "quantity", default: 1

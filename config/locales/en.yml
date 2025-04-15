@@ -101,3 +101,32 @@ en:
       home: "Home"
       login: "Login"
       logout: "Log out"
+  orders:
+    form:
+      errors:
+        title: "Errors"
+        name: "Name"
+        address: "Address"
+        email: "Email"
+        pay_type: "Pay type"
+      name_placeholder: "Enter name"
+      address_placeholder: "Enter address"
+      email_placeholder: "Enter email"
+      pay_type_placeholder: "Enter pay type"
+      submit_button: "Create order"
+      cancel_button: "Cancel"
+    index:
+      title: "Orders"
+      new_order: "New order"
+    show:
+      title: "Order"
+      order_number: "Order number"
+      order_date: "Order date"
+      order_status: "Order status"
+      order_total: "Order total"
+    new:
+      title: "New order"
+    edit:
+      title: "Edit order %{order_number}"
+    destroy:
+      title: "Destroy order %{order_number}"
