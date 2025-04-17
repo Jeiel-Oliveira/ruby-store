@@ -1,4 +1,6 @@
-<tbody class="bg-white divide-y divide-gray-200">
+<% if line_item == @current_item %>
+  <tr class="bg-gray-100" id="current_item">
+<% else %>
   <tr>
     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
       <%= line_item.product.name %>
@@ -13,4 +15,4 @@
       <%= number_to_currency(line_item.total_price) %>
     </td>
   </tr>
-</tbody>
+<% end %>
