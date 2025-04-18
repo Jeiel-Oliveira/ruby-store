@@ -1,0 +1,40 @@
+<%= form_with(model: user, class: "space-y-6") do |form| %>
+  <% if user.errors.any? %>
+    <div class="bg-red-50 text-red-500 p-4 rounded-md mb-4">
+      <h2 class="font-bold mb-2"><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul class="list-disc pl-5">
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="grid grid-cols-1 gap-6">    
+    <div>
+      <%= form.label :email_address, class: "block mb-2 text-sm font-medium text-gray-900" %>
+            
+      <div class="mt-2">
+        <%= form.email_field :email_address, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: t(".email_address_placeholder") %>
+      </div>
+    </div>
+
+    <div>
+      <%= form.label :password, class: "block mb-2 text-sm font-medium text-gray-900" %>
+      <div class="mt-2">
+        <%= form.password_field :password, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: t(".password_placeholder") %>
+      </div>
+    </div>
+
+    <div>
+      <%= form.label :password_confirmation, class: "block mb-2 text-sm font-medium text-gray-900" %>
+      <div class="mt-2">
+        <%= form.password_field :password_confirmation, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: t(".password_confirmation_placeholder") %>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex justify-end">
+    <%= form.submit class: "bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 cursor-pointer" %>
+  </div>
+<% end %>

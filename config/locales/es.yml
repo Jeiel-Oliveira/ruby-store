@@ -23,3 +23,8 @@ es:
       rating_placeholder: "Ingrese calificación"
       description_placeholder: "Ingrese descripción del review"
       price_placeholder: "Ingrese precio del producto"
+  users:
+    form:
+      email_address_placeholder: "Ingrese email del usuario"
+      password_placeholder: "Ingrese contraseña del usuario"
+      password_confirmation_placeholder: "Confirmar contraseña del usuario"

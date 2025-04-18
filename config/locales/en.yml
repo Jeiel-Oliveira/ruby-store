@@ -130,3 +130,8 @@ en:
       title: "Edit order %{order_number}"
     destroy:
       title: "Destroy order %{order_number}"
+  users:
+    form:
+      email_address_placeholder: "Enter email address"
+      password_placeholder: "Enter password"
+      password_confirmation_placeholder: "Confirm password"

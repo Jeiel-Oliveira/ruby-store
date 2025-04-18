@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   end
 
   resources :line_items, only: [ :create ]
+  resources :users
   resource :unsubscribe, only: [ :show ]
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
