@@ -8,4 +8,11 @@ class UserControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to users_path
   end
+
+  test "should update user" do
+    login
+    user = users(:jack)
+    patch user_path(user), params: { user: { email_address: "testandoteste@gmail.com", password: "password", password_confirmation: "password" } }
+    assert_redirected_to users_path
+  end
 end

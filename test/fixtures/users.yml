@@ -7,3 +7,7 @@ jeiel:
 oliver:
   email_address: oliver@alves.com
   password_digest: <%= password_digest %>
+  
+jack:
+  email_address: jack@alves.com
+  password_digest: <%= password_digest %>

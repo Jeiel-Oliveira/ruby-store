@@ -36,15 +36,20 @@
         <% end %>
       </div>
     </nav>
-    <main class="h-full max-w-7xl mx-auto p-6">      
-      <% if notice.present? %>
-        <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-md inline-block" id="notice"><%= notice %></p>
-      <% end %>
+    <main class="flex h-full">
+      <%= render "layouts/sidebar" %>
 
-      <% if alert.present? %>
-        <p class="py-2 px-3 bg-red-50 mb-5 text-red-500 font-medium rounded-md inline-block" id="alert"><%= alert %></p>
-      <% end %>
-      <%= yield %>
+      <section class="h-full p-6 justify-center flex-3 max-w-7xl mx-auto">
+        <% if notice.present? %>
+          <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-md inline-block" id="notice"><%= notice %></p>
+        <% end %>
+
+        <% if alert.present? %>
+          <p class="py-2 px-3 bg-red-50 mb-5 text-red-500 font-medium rounded-md inline-block" id="alert"><%= alert %></p>
+        <% end %>
+
+        <%= yield %>
+      </section>
     </main>
   </body>
 </html>
