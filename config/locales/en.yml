@@ -29,11 +29,21 @@
 
 en:
   hello: "Hello world"
+  sidebar:
+    cart: "Cart"
+    products: "Products"
+    users: "Users"
+    orders: "Orders"
   products:
     index:
       title: "Products"
     new:
       title: "New product"
+    show:
+      back: "Back"
+      reviews: "Reviews"
+      add_review: "Add review"
+      no_reviews: "No reviews for this product"
     form:
       name_placeholder: "Enter product name"
       featured_image_placeholder: "Upload product image"
@@ -57,12 +67,7 @@ en:
       title: "New line item"
       submit_button: "Create line item"
       cancel_button: "Cancel"
-      success: "Line item was successfully created."
-    edit:
-      title: "Edit line item"
-      submit_button: "Update line item"
-      cancel_button: "Cancel"
-      success: "Line item was successfully updated."
+      success: "Line item was successfully created."    
     destroy:
       title: "Destroy line item"
       submit_button: "Destroy line item"
@@ -71,6 +76,16 @@ en:
   carts:
     index:
       title: "Shopping Carts"
+      new_cart: "New Cart"
+      show: "Show"
+      edit: "Edit"
+      destroy: "Delete"
+      confirm_destroy: "Are you sure you want to delete this cart?"
+      no_carts_found: "No carts found"
+      id: "ID"
+      created_at: "Created At"
+      status: "Status"
+      actions: "Actions"      
     show:
       title: "Shopping Cart"
       product: "Product"
@@ -82,6 +97,8 @@ en:
       confirm_empty: "Are you sure?"
       empty_cart_message: "Your cart is empty"
       continue_shopping: "Continue Shopping"
+    form:
+      prohibited_from_being_saved: "Prohibited from being saved"
     new:
       title: "New Cart"
     edit:
@@ -115,15 +132,19 @@ en:
       pay_type_placeholder: "Enter pay type"
       submit_button: "Create order"
       cancel_button: "Cancel"
+      destroy_order: "Destroy order"
+      confirm_destroy: "Are you sure?"
     index:
       title: "Orders"
       new_order: "New order"
     show:
-      title: "Order"
+      title: "Order %{order_number}"
       order_number: "Order number"
       order_date: "Order date"
       order_status: "Order status"
       order_total: "Order total"
+      edit_order: "Edit order"
+      back_to_orders: "Back to orders"
     new:
       title: "New order"
     edit:
@@ -131,7 +152,31 @@ en:
     destroy:
       title: "Destroy order %{order_number}"
   users:
+    index:
+      title: "Users"
+      new_user: "New user"
+      confirm_destroy: "Are you sure you want to delete this user?"
+      id: "ID"
+      email: "Email"
+      created_at: "Created at"
+      actions: "Actions"
+    new:
+      title: "New user"
+    edit:
+      title: "Edit user %{user_email}"
+    show:
+      title: "User %{user_email}"
+      user_email: "User email"
+      created_at: "Created at"
+      actions: "Actions"
+      id: "ID"
+      email: "Email"
+      confirm_destroy: "Are you sure?"
     form:
       email_address_placeholder: "Enter email address"
       password_placeholder: "Enter password"
       password_confirmation_placeholder: "Confirm password"
+    destroy:
+      title: "Destroy user %{user_email}"
+      confirm_destroy: "Are you sure?"
+

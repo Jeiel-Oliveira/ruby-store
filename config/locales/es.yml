@@ -1,5 +1,10 @@
 es:
   hello: "Hola mundo"
+  sidebar:
+    cart: "Carrito"
+    products: "Productos"
+    users: "Usuarios"
+    orders: "Pedidos"
   products:
     index:
       title: "Productos"
@@ -15,6 +20,11 @@ es:
       price_placeholder: "Ingrese precio del producto"
     errors:
       line_items_present: "No se puede eliminar el producto porque tiene elementos asociados"
+    show:
+      back: "Volver"
+      reviews: "Reviews"
+      add_review: "Agregar review"
+      no_reviews: "No hay reviews para este producto"
   reviews:
     new:
       title: "Nuevo review para %{product_name}"
@@ -24,7 +34,38 @@ es:
       description_placeholder: "Ingrese descripción del review"
       price_placeholder: "Ingrese precio del producto"
   users:
+    new:
+      title: "Nuevo usuario"
+    show:
+      title: "Usuario %{user_email}"
+      user_email: "Email del usuario"
+      created_at: "Creado el"
+      actions: "Acciones"
+    index:
+      title: "Usuarios"
+      new_user: "Nuevo usuario"
+      confirm_destroy: "¿Está seguro de que desea eliminar este usuario?"
+      id: "ID"
+      email: "Email"
+      created_at: "Creado el"
     form:
       email_address_placeholder: "Ingrese email del usuario"
       password_placeholder: "Ingrese contraseña del usuario"
       password_confirmation_placeholder: "Confirmar contraseña del usuario"
+  carts:
+    index:
+      title: "Carritos de compra"
+      new_cart: "Nuevo carrito"
+      show: "Ver"
+      edit: "Editar"
+      destroy: "Eliminar"
+      confirm_destroy: "¿Está seguro de que desea eliminar este carrito?"
+      no_carts_found: "No se encontraron carritos"
+      id: "ID"
+      created_at: "Creado el"
+      status: "Estado"
+      actions: "Acciones"
+    form:
+      prohibited_from_being_saved: "Prohibido de ser guardado"
+    edit:
+      title: "Editar carrito"
