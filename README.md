@@ -150,6 +150,14 @@ instalar a versão do ruby do projeto (atualmente 3.3.1)
 
 rbenv install 3.3.1
 
+**
+  Caso não apareça a versão, rodar comando:
+  git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+
+** Caso não funcione mesmo assim:
+  sudo apt-get update
+  sudo apt install build-essential rustc libssl-dev libyaml-dev zlib1g-dev libgmp-dev
+
 utilizar a versão correta na máquina com rbenv
 
 rbenv global 3.3.1 ou rbenv local 3.3.1 (dentro do repositório do projeto)
@@ -161,6 +169,16 @@ sudo apt-get install libmagic-dev
 in the .ruby-version file change the content to:
 
 3.3.1
+
+install the ruby-lsp gem:
+
+gem install ruby-lsp
+
+If others errors occur, follow the instructions in the output terminal from ruby-lsp
+
+** Se necessário rode:
+  gem cleanup date
+  gem uninstall date -v 3.4.1
 
 # SQL
 
