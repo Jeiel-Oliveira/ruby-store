@@ -144,7 +144,7 @@ https://marketplace.visualstudio.com/items?itemName=Shopify.ruby-lsp
 
 instalar rbenv
 
-https://github.com/rbenv/rbenv
+https://github.com/rbenv/rbenv (instalar pelo github - não use apt install)
 
 instalar a versão do ruby do projeto (atualmente 3.3.1)
 
