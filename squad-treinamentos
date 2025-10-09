@@ -1,0 +1,61 @@
+Registro de treinamentos
+
+- Elimina as panilhas
+- Gestão de treinamentos (ainda não temos)
+
+---
+
+- Registro de pós graduação por exemplo
+- Medir treinamento e aprendizagem (Timebox - escopo que caiba nesse ano)
+- Treinamentos dentro da plataforma
+- Tela para reportar - CRUD (aprovar pelo administrador)
+- Admin poder registrar pela pessoa
+  - Treinamento externo registrado
+  - Webhook (Nome do curso, atividade - API aberta) (Verificar possibilidade de vincular)
+  - Vinculação de integrações
+
+--- 
+
+- Indicador de horas (empresas maduras não gostam)
+- Conectar treinamentos a objetivos estrátegicos e validar se a pessoa conclui o processo
+
+---
+
+CORE da funcionalidade
+
+- Registro de inventário
+- Retirar o relatório para acompanhamento
+
+BÔNUS
+
+- Dashboards estratégicos para validar
+- Provedores
+- Categoria
+- OCR - Para ler o arquivo do certificado
+  - agente de registro de certificado
+  - agente validador de certificado
+- Como vai funcionar a edição de um registro
+
+---
+
+- Colaborador
+- Curso/treinamento
+- Categoria
+- Tipo (Online google, webnar)
+- Carga horária
+- Data do treimento
+- Mês
+- Ano
+- Subir arquivos (para fazer upload do certificado)
+
+- Categorizar automaticamente (talvez via webscalp)
+- Habilidade que o curso afeta
+
+---
+
+Horas de treinamento
+
+- Total horas faltantes
+- Deixar os gráficos disponiveis 
+- Percentual de Colaborados com mais de 40h ano
+- Colaboradores
