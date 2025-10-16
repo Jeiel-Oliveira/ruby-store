@@ -38,6 +38,8 @@ BÔNUS
 
 ---
 
+Possiveis colunas
+
 - Colaborador
 - Curso/treinamento
 - Categoria
@@ -48,7 +50,7 @@ BÔNUS
 - Ano
 - Subir arquivos (para fazer upload do certificado)
 
-- Categorizar automaticamente (talvez via webscalp)
+- Categorizar automaticamente (Web scraping)
 - Habilidade que o curso afeta
 
 ---
