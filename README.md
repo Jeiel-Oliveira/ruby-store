@@ -195,3 +195,39 @@ jack james -> http://localhost:3000/o/2/users/12/edit
 mock para funcionar em local
 
 git switch localmocks
+
+# Tests aws local
+
+# frozen_string_literal: true
+
+class DesignEditorImageUploader < CarrierWave::Uploader::Base
+  include CarrierWave::MiniMagick
+
+  ## add from here
+  storage :fog
+
+  configure do |config|
+    config.fog_credentials = {
+      provider: "AWS",
+      aws_access_key_id: AppConfig.S3['key'],
+      aws_secret_access_key: AppConfig.S3['secret'],
+      region: "us-east-1"
+    }
+    config.fog_directory = (Rails.env == "stage" || Rails.env == "preproduction") ? "twygo_files_preproduction" : "twygo_files_#{Rails.env}"
+    config.fog_public = false
+    config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" }
+  end
+  ## to here
+
+  def store_dir
+    "uploads/design_editor_image/#{model.resource_type}/#{model.resource_id}/#{model.id}"
+  end
+
+  def extension_allowlist
+    %w(jpg jpeg png svg webp)
+  end
+
+  def asset_host
+    AppConfig.url
+  end
+end
