@@ -183,3 +183,15 @@ If others errors occur, follow the instructions in the output terminal from ruby
 # SQL
 
 https://www.sqltutorial.org/
+
+---
+
+henrique.novamente@yopmail.com
+
+jack james -> http://localhost:3000/o/2/users/12/edit
+
+# Export files 
+
+mock para funcionar em local
+
+git switch localmocks
